@@ -1,0 +1,17 @@
+django_project_name: kvmate
+django_git_url: https://github.com/kvmate/kvmate.git
+django_server_name: dn.user.selfnet.de
+django_deploy_components:
+  - gunicorn
+  - huey
+django_additional_dependencies:
+  - redis-server
+
+{#
+You can split the pillar data into different files here, the stuff below is
+specific to the project_name you chose (i.e. the left side of the asignment
+needs to be adjusted, too)
+#}
+
+kvmate_secret_key: your.key:use.pwgen.-s.64
+kvmate_postgres_password: your.key:use.something.safe.here,too
