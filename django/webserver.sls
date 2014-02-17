@@ -31,3 +31,14 @@ nginx:
     - target: /etc/nginx/sites-available/{{ project_name }}
     - require:
       - file: /etc/nginx/sites-available/{{ project_name }}
+
+{{ project_home }}/preseed/post_install.sh:
+  file.managed:
+    - source: salt://django/files/post_install.sh
+    - user: {{ project_name }}
+    - group: {{ project_name }}
+    - mode: 644
+    - template: jinja
+    - context:
+      project_name: {{ project_name }}
+      salt_master: '192.168.0.2'
