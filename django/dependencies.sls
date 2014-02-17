@@ -21,3 +21,5 @@ dependencies:
     - user: {{ project_name }}
     - no_chown: True
     - cwd: {{ project_home }}/src/requirements.d/
+    - require:
+      - git: kvmate
