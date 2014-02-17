@@ -12,7 +12,19 @@ DATABASES = {
     }
 }
 
-###############################################################
-###############################################################
-from django.core.exceptions import ImproperlyConfigured
-raise ImproperlyConfigured('you propaply do NOT want to use these default settings, change the local_settings.py delivered by Salt')
+STATIC_ROOT = '{{ project_home }}/static/'
+
+# the final ip/dns name of your instance used for the preseed downloads
+PRESEED_HOST = "192.168.0.1"
+
+# initial password set in new VMs
+INITIAL_PASSWORD = "geheim42"
+
+# Where should the in-browser VNC client connect to (probably your server's IP)
+VNC_HOST = '62.210.141.243'
+
+# defaults on host create page
+CREATE_HOST_DEFAULT_DOMAIN = 'as-webservices.de'
+CREATE_HOST_DEFAULT_SETUP_SCRIPT = 'http://192.168.0.1/post_install.sh'
+
+DEFAULT_MIRROR = "ftp.fr.debian.org"
